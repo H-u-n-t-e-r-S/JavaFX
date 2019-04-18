@@ -25,20 +25,20 @@ public class TaschenrechnerControler {
 	@FXML 
 	protected void operationAuswahl(ActionEvent e) {
 		Double value1 = Double.valueOf(eingabe1.getText());
-        Double value2 = Double.valueOf(eingabe2.getText());
-        Double a = value1 + value2;
-        Double s = value1 - value2;
-        Double m = value1 * value2;
-        Double d = value1 / value2;
+        	Double value2 = Double.valueOf(eingabe2.getText());
+        	Double a = value1 + value2;
+        	Double s = value1 - value2;
+        	Double m = value1 * value2;
+        	Double d = value1 / value2;
         String auswahl = operations.getSelectionModel().getSelectedItem().toString();
-        if(auswahl.equals("Addition"))
-        ausgabe.setText(a.toString());
-        if(auswahl.equals("Subtraktion"))
-		ausgabe.setText(s.toString());
-        if(auswahl.equals("Multiplikation"))
-		ausgabe.setText(m.toString());
-        if(auswahl.equals("Division"))
-		ausgabe.setText(d.toString());
+        	if(auswahl.equals("Addition"))
+        		ausgabe.setText(a.toString());
+        	if(auswahl.equals("Subtraktion"))
+			ausgabe.setText(s.toString());
+       		 if(auswahl.equals("Multiplikation"))
+			ausgabe.setText(m.toString());
+        	if(auswahl.equals("Division"))
+			ausgabe.setText(d.toString());
 	}
 
 	@FXML 
