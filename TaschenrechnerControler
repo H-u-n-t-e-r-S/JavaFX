@@ -1,0 +1,52 @@
+import java.awt.event.ActionEvent;
+
+import javafx.application.Platform;
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+
+
+public class TaschenrechnerControler {
+	@FXML
+	private TextField eingabe1, eingabe2;
+	@FXML
+	private ComboBox<String> operations;
+	@FXML
+	private Label ausgabe;
+	@FXML
+	private Button bbeenden;
+	
+	@FXML
+	protected void beenden(ActionEvent e) {
+		Platform.exit();
+	}
+	@FXML 
+	protected void operationAuswahl(ActionEvent e) {
+		Double value1 = Double.valueOf(eingabe1.getText());
+        Double value2 = Double.valueOf(eingabe2.getText());
+        Double a = value1 + value2;
+        Double s = value1 - value2;
+        Double m = value1 * value2;
+        Double d = value1 / value2;
+        String auswahl = operations.getSelectionModel().getSelectedItem().toString();
+        if(auswahl.equals("Addition"))
+        ausgabe.setText(a.toString());
+        if(auswahl.equals("Subtraktion"))
+		ausgabe.setText(s.toString());
+        if(auswahl.equals("Multiplikation"))
+		ausgabe.setText(m.toString());
+        if(auswahl.equals("Division"))
+		ausgabe.setText(d.toString());
+	}
+
+	@FXML 
+	void initialize() {
+		operations.getItems().addAll("Addition", "Subtraktion", "Multiplikation", "Division");
+//		die erste Eintrag auswählen
+		operations.getSelectionModel().selectFirst();
+	}
+	
+
+}
